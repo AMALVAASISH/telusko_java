@@ -5,7 +5,7 @@ package core_java.basics_2;
 
 //         byte b = 127;
 //         int a = 12;
-//         b = (byte)(a);/// this is casting, xplicit conversion, vice versa it is called implicit conversion
+//         b = (byte)(a);/// this is casting, explicit conversion, vice versa it is called implicit conversion
 
 
 //         float f = 5.6f;

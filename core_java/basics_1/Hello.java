@@ -15,6 +15,7 @@ public class Hello {
 
     char c = 'a';
     c++;
+    System.out.println(c);
     System.out.println(c+num+num2+num3);// the char gets incremented 
    } 
 }

@@ -21,6 +21,11 @@ public class Main {
         //up casting
         obj.show();
         // this happens implicitly , behind the scenes
+        
+        
+
+        // obj.show2();// The method show2() is undefined for the type A
+        
 
         B obj1 = (B) obj;
         // down casting

@@ -1,40 +1,40 @@
 package core_java.encapsulation;
 
-// class Human{
-//     private int age;// private makes it acessible in the 
-//     // same class
+class Human{
+    private int age;// private makes it acessible in the 
+    // same class
 
-//     private String Name;
-//     //everytime make instance variable private(important)
-//     // they can be accessed via methods
+    private String Name;
+    //everytime make instance variable private(important)
+    // they can be accessed via methods
      
-//     //means variable are encapsulated with methods
+    //means variable are encapsulated with methods
 
-//     public int getAge(){
-//         return age;
-//     }
-//     public String getName(){
-//         return Name; 
-//     }
+    public int getAge(){
+        return age;
+    }
+    public String getName(){
+        return Name; 
+    }
 
-//     public void setAge(int a){
-//         age = a;// setting value can be done like this
-//     }
+    public void setAge(int a){
+        age = a;// setting value can be done like this
+    }
 
-//     public void setName(String nams){
-//         Name = nams;
-//     }
-// }
+    public void setName(String nams){
+        Name = nams;
+    }
+}
 
-// public class Main {
-//     public static void main(String[] args) {
-//         Human obj = new Human();
-//         // obj.age = 24;// not accesible
-//         // obj.Name = "Amal";// not accesible
-//         obj.setAge(12);
-//         System.out.println(obj.getAge());;
-//     }
-// }
+public class Main {
+    public static void main(String[] args) {
+        Human obj = new Human();
+        // obj.age = 24;// not accesible
+        // obj.Name = "Amal";// not accesible
+        obj.setAge(12);
+        System.out.println(obj.getAge());;
+    }
+}
 
 // getters and setters 
 // for gettting and setting value 
@@ -204,20 +204,20 @@ package core_java.encapsulation;
 // annonymous object
 
 
-class A{
-    public A(){
-        System.out.println("in A");
-    }
-    public void show(){
-        System.out.println("in show");
-    }
-}
+// class A{
+//     public A(){
+//         System.out.println("in A");
+//     }
+//     public void show(){
+//         System.out.println("in show");
+//     }
+// }
 
-public class Main{
-    public static void main(String[] args) {
-        new A();// object creation, no reference variable
-        // these are called anonymous objects, dont have a name
-        // these cant be re used
-        new A().show();
-    }
-}
+// public class Main{
+//     public static void main(String[] args) {
+//         new A();// object creation, no reference variable
+//         // these are called anonymous objects, dont have a name
+//         // these cant be re used
+//         new A().show();
+//     }
+// }
