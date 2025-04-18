@@ -1,0 +1,60 @@
+jdbc - java databse connectivity
+
+there are 7 steps to do to connectivity
+1.import the package (java.sql.*)
+
+2. load the driver and register
+(driver for mysql - com.mysql.jdbc.driver)
+
+for that , you have to download a .jar file
+mysql-connector (eclipse), its in built in net beans
+
+to register, a method forName("com.mysql.jdbc.driver") is used
+
+3. establlish teh connection
+instantiate the connection
+
+4. create the statement
+three types of statement: normal,prepared and callable statements
+
+5. execute the query
+
+6.process results
+
+7. close the connection
+
+
+import java.sql.*;
+
+public static void main(){
+
+}
+
+Class.forName(""com.mysql.jbdc.Driver)
+
+Connection con = DriverManager getConnection("URL","uName","password")
+// getConnection is static
+
+statement st = con.CreateStatement();
+
+ResultSet rs = st.executeQuery('select * from students')
+(ResultSet is a interface)
+
+rs.next() - to shift to next row  
+rs.getInt(1) + " " + rs.getString(2)
+
+// loop can be used here
+
+while(rs.next()){
+    rs.getInt(1) + " " + rs.getString(2)
+    
+}
+
+st.close();
+con.close();
+
+
+23.38.00 hr mn seconds
+
+// download eclipse before proceeding
+
