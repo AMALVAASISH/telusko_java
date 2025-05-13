@@ -5,7 +5,7 @@ package core_java.static_keyword;
 //     String brand;
 //     int price;
 //     static String name;// static makes the variable common for all the objects
-//     // there are called with class name, calling object should be avoided
+//     // these are called with class name, calling object should be avoided
 //     // static means we are making something as a class member, not object member
 
 
