@@ -71,35 +71,35 @@ package core_java.basics_oops;
 
 // every method has its own stack
 
-// class Calculator{
-//     int num; // instance variable
+class Calculator{
+    int num; // instance variable
 
-//     public int add(int n1,int n2){ // local variables
-//         return n1+n2;
-//     }
-// }
+    public int add(int n1,int n2){ // local variables
+        return n1+n2;
+    }
+}
 
-// public class Main{
-//     public static void main(String[] args){
-
-
-//         int data = 10; // local variables
-//         Calculator obj = new Calculator();
-//         int r1 = obj.add(1,2);
+public class Main{
+    public static void main(String[] args){
 
 
+        int data = 10; // local variables
+        Calculator obj = new Calculator();
+        int r1 = obj.add(1,2);
 
-//         // this below is just to show that two objects can have different values
-//         Calculator obj1 = new Calculator();
-//         obj.num = 8;
 
-//         System.out.println(obj);
-//         System.out.println(obj1);
-//         System.out.println(data+r1+ "just to avoid the warnings");
-//         // there is change in the values of the objects since they are different objects
 
-//     }
-// }
+        // this below is just to show that two objects can have different values
+        Calculator obj1 = new Calculator();
+        obj.num = 8;
+
+        System.out.println(obj);
+        System.out.println(obj1);
+        System.out.println(data+r1+ "just to avoid the warnings");
+        // there is change in the values of the objects since they are different objects
+
+    }
+}
 
 // there is stack and heap
 

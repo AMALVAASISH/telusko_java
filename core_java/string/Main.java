@@ -18,7 +18,10 @@ public class Main {
         // String name1 = "amal"; // behind the scene also the object creation is happening
 
         // name1 = name1+"v aasish";
-        // System.out.println(name1);// the "v aasish" is NOT getting added to name1 variable, X "amal v aasish"
+        // System.out.println(name1);// the "v aasish" is NOT getting added to name1 variable, X "amal v aasish" (check the below comment)
+
+        // Java String objects are immutable, meaning that once a string is created, it cannot be changed. 
+        // But the variable name1 is just a reference — it can be updated to point to a new string object.
 
 
 
