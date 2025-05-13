@@ -1,0 +1,211 @@
+from data base to client, to send data ,u write server side code
+using servlet
+
+servlet is like a container between the client and database
+
+there are three layers in the servlet, layer is class in java
+first is for accepting user data(controllers)
+second is for business logic(service)
+third is for connecting to database(repositories)
+
+so for the controller classs to do something with the service, it needs an object of the service class
+
+control of creation of the objects is given to the framework - inversion of control (Ioc)
+this concept is done using some technique
+technique - dependency injection
+
+Di is implementation of inversion of control, Ioc is a principle
+
+there are different methods for di:
+
+constructor injection
+setter injection
+field injection (not that much recommended)
+
+# 5 
+for spring , we have to specify in the config file,for which class object should be created
+also when creating a web app, it needs a tomcat server installed on the system
+
+go to start.spring.io 
+
+in spring web app, the .war(web archive) files are created and they are pushed to the tomcat server
+
+but in spring boot , .jar files are created and they are itself a cloud, there is a embedded tomcat
+
+ ALL PROJECT FOLDERS ARE IN DOWNLOADS AND OPENDED IN INTELLIJ IDEA, PLEASE CHECK THAT
+
+#5 at 6.22 mm ss 
+
+working with demoApp
+springboot follows convention over configuration , so it will do a lot of stuff , which u dont want also
+
+
+#6 dependecy injection using springboot
+
+working with myApp
+
+in this, the manual object creation causes issues
+CHECK in the comments of myApp
+
+so to avoid issues, we have to give the reference type of the object
+as the reference type of the spring container
+the reference type of the spring container is known as the applicationContext
+
+the SpringApplication.run, when deep dive returns the object of the applicationContext, its class extends applicationContext
+so instead of creating an object of applicationContext manually, we just assign it
+
+ApplicationContext context = SpringApplication.run(MyAppApplication.class, args);
+
+Dev obj = context.getBean(Dev.class);
+
+for this to work, there has to @component in the class that spring has to manage
+
+#7 autowire using springboot
+
+
+reached till 6.45 
+
+the @Autowired checks by type and finds the class
+
+after creating an interface and uding computer con to run the compile methods
+
+we are creating another class Desktop and creating a same method in it, to see which runs  
+
+in this case the application will fail to start ,due to the confusion 
+
+in that case,we can use @Primary for the class we have prefernce over and it will take that object of that particular class
+this is used when there are @Component on both classes
+
+if we dont want to use @Primary
+we can use @Qualifier()  and give name of the instance of the class in (), instance means bean name( class name without caps)
+
+
+#8 spring without boot
+
+using DemoSpring
+
+here there is no dependecy for spring in the dependencies(pom.xml)
+no config file(wasnt in springboot also) 
+and external spring libraries
+
+when u get any project, first run it , to check if it is working
+
+we cannot get theapplicationcontext created by spring , because there is no spring dependecy
+go to nvmrepo in google, search for springcontext , select the one that has usages and no vulnerabilities
+copy paste the things in the pom.xml and then click sync maven changes to update the dependencies in the external libraries
+
+        ApplicationContext context = new ClassPathXmlApplicationContext();
+        // this will create the Ioc container
+        // the class here implements ApplicationContext
+        Dev obj = context.getBean(Dev.class);
+        obj.build();
+
+even after this , it will not run, due to some issue from the bean factory
+
+        ApplicationContext context = new ClassPathXmlApplicationContext("spring.xml");
+
+that can be removed by using this, and we have to create a directory resources in main and inside it an xml file
+and in that xml file, te configurations are done
+
+# 9
+
+every class spring manages is called beans
+
+that is given in spring.xml, as bean
+
+<beans>
+    <bean id="dev" class="org.example.Dev">
+
+    </bean>
+</beans>
+
+        // after the entries in xml
+        Dev obj = (Dev) context.getBean("dev");
+        // type  casting is done bcoz, it returns the type only
+        obj.build();
+
+
+search for spring 6 bean configuration xml,
+
+take the content and paste in the xml 
+and include the other content already there in the xml
+run , it will work
+
+
+# 10
+
+Constructor and Setter Injection in Spring
+
+a private variable is created in dev class, its default value is 0 since it is int type
+a getter and setter method is created , for the variable age 
+
+this value can be given in the spring.xml, property tag of the specific bean
+herer the object will have the value
+this is the setter injection method
+
+in case of constructor injection, there is constructor-arg tag in the bean where value can be passed to the
+specified bean
+
+for the object Laptop laptop
+
+similar to assiging values using the property tag, we can give reference for the object also
+
+    <bean id="dev" class="org.example.Dev">
+        <constructor-arg value="14"/>
+        <property name="laptop" ref="lap1"/>
+    </bean>
+    <bean id="lap1" class="org.example.Laptop">
+
+    here name is the name of the refernce object inside the class Dev
+
+getter and setter for laptop also needs to be created, for setter injection
+
+this is a process of setter injection for laptop object (complex object)
+
+
+for constructor injection, give ref 
+
+use constructor
+
+# 11
+
+doing autowiring in spring
+
+Desktop class is created
+ and an interface is extracted from laptop class using the IDE,
+ and the desktop and laptop class are made to implement the interface
+
+         <bean id="dev" class="org.example.Dev" autowire="byName">
+        </bean>
+        <bean id="comp" class="org.example.Laptop">
+
+        </bean>
+        <bean id="desk" class="org.example.Desktop">
+
+we can introduce autowiring in this
+
+
+when autowire is by type
+
+in the other bean, we give the primary=true to avoid confusion, since both beans will be of teh same type
+        <bean id="comp" class="org.example.Laptop" primary="true">
+
+
+# 13
+
+in the layers of spring web app, there are controller,services and repositories
+
+in between the client and controller, there is another layer known as front controller, which finds all the
+requestmappings and sends requests for the corresponding controller, this front controller is created by spring
+
+RestController returns the data, Controller returns the page
+
+# 14
+
+here lombok is added as dependecy in the pom.xml
+
+it helps in creating the constructors, methods bts
+
+take the dependency of lombok from maven repo, and then do the maven sync changes
+
+saw pit solutions and reizend company jobs, going to focus the next 3 weeks in python and will come back soon  
