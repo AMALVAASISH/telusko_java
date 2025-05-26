@@ -109,8 +109,8 @@ public class Main {
 
 //     public Human(int a, String b){// parameterised constructor
 
-//         age = a;
-//         name = b;// this keyword isnot used, bcoz the names are not same
+//         this.age = a;
+//         name = b;// this keyword isnot used, bcoz the names are different, but using this is also not a problem
 
 //     }
 
