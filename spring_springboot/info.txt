@@ -209,3 +209,4 @@ it helps in creating the constructors, methods bts
 take the dependency of lombok from maven repo, and then do the maven sync changes
 
 saw pit solutions and reizend company jobs, going to focus the next 3 weeks in python and will come back soon  
+didnt get the job opening
