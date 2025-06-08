@@ -242,3 +242,60 @@ jpa are just standards, and hibernate just implements those standards
  
 spring has a module called as spring data jpa 
 
+# 18
+
+implementation of spring data jpa
+
+when u add jpa in the dependency in the pom.xml, and try to start the app
+it will not start and show an error, no url is present
+
+so whenever u add a driver or jpa or db , we have to add url
+
+so go to application properties ,add this
+h2 - database, mem - memory, telusko - database name
+
+spring.datasource.url = jdbc:h2:mem:telusko
+
+add this also,
+spring.datasource.driverClassName = org.h2.Driver
+
+then remove the version number of h2 , from pom.xml
+also change from test to runtime in the scope tag
+
+to accesss h2, go to localhost/h2-console
+
+after going there, specify the jdbc url, and then connnect
+
+# 19
+
+service layer is not responsible for working with data
+
+in the repo package, create an interface and it extends jparepository class, there specify the class and primary key datatype
+the jpa takes care of the definition of the methods inside the interface
+
+repo provides numerous methods for crud, bcoz it extends methods from jparepository class, it makes the code less
+
+if you want to have a class, in which you want to create a table, give @Entity annotation in that class 'Product'
+and after that we have to specify the primary key, otherwise identifier error will come
+
+so we add @Id above prodId
+
+now after restarting the app, go and check the h2 console, the product table will be there
+
+for us to see the sql queries being implemented, when the crud operation is done,
+in application.properties, add
+
+to change the username and password also,
+spring.datasource.username = navin
+sprinig.datasource.password = telusko
+
+
+#20 
+
+understanding react
+
+
+# 21
+
+ecom-proj
+
