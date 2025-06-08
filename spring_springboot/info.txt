@@ -212,3 +212,33 @@ take the dependency of lombok from maven repo, and then do the maven sync change
 
 saw pit solutions and reizend company jobs, going to focus the next 3 weeks in python and will come back soon  
 didnt get the job opening
+
+# 15 
+
+testing endpooints with postman and stuff
+
+
+jackson library in the dependency is responsible for converting java object to json and vice versa
+
+@RequestMapping , there is no specification of method
+
+so for get request, we use GetMapping("/")
+also for post, we will use postmapping
+
+#16 
+
+did put and delete methods
+
+#17
+Spring Data JPA
+
+ORM are used for linking objects with relations in database, thats where the name came from
+object relational GetMapping
+
+the orms are hibernate , mybatis, eclipse link  
+
+JPA  - java persistance api     
+jpa are just standards, and hibernate just implements those standards
+ 
+spring has a module called as spring data jpa 
+
